@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"  crossorigin="anonymous">
+
+    <title>balasudhan web</title>
+  </head>
+<body style="background-image: url(./image/six.jpg); background-repeat: no-repeat; background-size: cover; ">
+    <div class="container" style="top: 76px;
+    position: relative;background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );">
+      <div class="row">
+        <div class="col-12 mt-3 mb-3 text-center">
+          <div class="card-body">
+          <p class="card-text" style="font-family: Georgia, serif;
+          font-size: 40px;
+          letter-spacing: 0.2px;
+          word-spacing: 3.6px;
+          color: #000000;
+          font-weight: 700;
+          text-decoration: underline solid rgb(68, 68, 68);
+          font-style: normal;
+          font-variant: small-caps;
+          text-transform: uppercase;">PRODUCT DETAILS</p>
+          </div>      
+          <div class="content">
+            <label>PRODUCT</label> 
+            <input style="border: 1px solid red;" type="text"    placeholder="Enter your PRODUCT "  id="firstname" />
+            <label style="display: none;" id="firstname1"> ENTER PRODUCT NAME </label>
+            <label style="display: none;" id="firstname2">ATleast give more than 4 letters </label>
+          </div>
+          <div class="content">
+            <label>DESCRIPTION</label> 
+            <input style="border: 1px solid red;" type="text"    placeholder="Enter your DESCRIPTION"  id="lastname"/>
+            <label style="display: none;" id="lastname1"> WRITE SOME THING </label>
+          </div>
+          <div class="content">
+           <div class="content">
+            <label >SELECT PHOTO</label>
+                <input  type="file" onchange="loadFile(event)"><br>
+                <img id="output" alt="" width="140px" height="85px" style="object-fit: contain;">
+            </div>
+            <div class="content">
+          <label for="price">Enter Price:</label>
+        <input type="number" id="price" placeholder="Enter price"><br>
+  
+        <label for="discount">Select Discount:</label>
+             <select id="discount">
+                <option value="0">No Discount</option>
+                 <option value="0.1">10% Discount</option>
+                   <option value="0.2">20% Discount</option>
+              </select>
+        <p>Total Price after Discount: <span id="totalPrice">0</span></p>
+        
+        
+        <div> 
+           <input class="w3-btn w3-black" type="button" value="check" onclick="validatLoginForm()"/>
+        </div>
+
+  
+      </div>
+    </div>
+      
+       
+       
+       
+      
+  
+      <!-- Optional JavaScript; choose one of the two! -->
+  
+      <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+      -->
+      <script>
+          function  validatLoginForm(){
+              var firstname = document.getElementById('firstname').value;
+             if(firstname){
+              console.log("-------firstname---",firstname.length);
+      
+            console.log("-------firstname---",firstname.trim().length);
+      
+              if(firstname.trim().length >= 4){
+                  window.location.href = 'second.html';
+                document.getElementById('firstname2').style="border: 1px solid green;"
+                document.getElementById('firstname2').style="display:none"
+                console.log('go');
+              }else{
+                document.getElementById('firstname2').style="border: 1px solid red;"
+                document.getElementById('firstname2').style="display:block"
+                console.log('stop');
+              }
+               document.getElementById('firstname').style="border: 1px solid green;"
+              document.getElementById('firstname1').style="display:none"
+             }else{
+              document.getElementById('firstname').style="border: 1px solid red;"
+              document.getElementById('firstname1').style="display:block"
+             }
+            
+             var lastname = document.getElementById('lastname').value;
+             if(lastname){
+              window.location.href = 'second.html';
+              document.getElementById('lastname').style="border: 1px solid green;"
+              document.getElementById('lastname1').style="display:none"
+              
+             }else{
+              document.getElementById('lastname').style="border: 1px solid red;"
+              document.getElementById('lastname1').style="display:block"
+            }
+             console.log("-------lastname---",lastname );
+      
+      
+            var password = document.getElementById('password').value;
+            if(password){
+              window.location.href = 'second.html';
+              document.getElementById('password').style="border: 1px solid green;"
+              document.getElementById('password1').style="display:none"
+              
+            }else{
+             document.getElementById('password').style="border: 1px solid red;"
+             document.getElementById('password1').style="display:block"
+            }
+           console.log("-------password---",password);
+          
+              // mail.id
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var email = document.getElementById('email').value;
+                var validEmail = mailformat.test(email);
+                if(validEmail){
+                  window.location.href = 'second.html';
+                  // alert('')
+                  document.getElementById('email').style="border: 1px solid green;"
+                  document.getElementById('mail1').style="display:none"
+      
+                } else{
+                  document.getElementById('email').style="border: 1px solid red;"
+                 document.getElementById('mail1').style="display:block"
+                  alert('enter valid e mail')
+                  // window.location.href = 'second.html';
+      
+                }  
+                console.log('----email----',email);
+        }
+        function selectcountry(event){
+        console.log('selectcountry--->',event.target.value);
+        
+        }
+        function loadFile(event) {
+              var reader = new FileReader();
+              reader.onload = function () {
+                  var output = document.getElementById('output');
+                  output.src = reader.result;
+         };
+              reader.readAsDataURL(event.target.files[0]);
+      }
+      const priceInput = document.getElementById('price');
+    const discountSelect = document.getElementById('discount');
+    const totalPriceSpan = document.getElementById('totalPrice');
+
+  
+    priceInput.addEventListener('input', updateTotalPrice);
+    discountSelect.addEventListener('change', updateTotalPrice);
+
+    
+    function updateTotalPrice() {
+     
+      const price = parseFloat(priceInput.value) || 0;
+      const discount = parseFloat(discountSelect.value);
+
+      
+      const discountedPrice = price - (price * discount);
+
+      
+      totalPriceSpan.textContent = discountedPrice.toFixed(2);
+    }
+      
+        </script>
+         
+          
+          
+          
+        
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>
